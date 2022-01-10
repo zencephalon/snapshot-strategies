@@ -24,6 +24,7 @@ import * as erc20WithBalance from './erc20-with-balance';
 import * as erc20BalanceOfDelegation from './erc20-balance-of-delegation';
 import * as erc20BalanceOfQuadraticDelegation from './erc20-balance-of-quadratic-delegation';
 import * as erc20BalanceOfWeighted from './erc20-balance-of-weighted';
+import * as erc20BalanceOfIndexed from './erc20-balance-of-indexed';
 import * as erc20Price from './erc20-price';
 import * as balanceOfWithMin from './balance-of-with-min';
 import * as balanceOfWithThresholds from './balance-of-with-thresholds';
@@ -117,6 +118,7 @@ import * as molochLoot from './moloch-loot';
 import * as erc721Enumerable from './erc721-enumerable';
 import * as erc721WithMultiplier from './erc721-with-multiplier';
 import * as erc721WithTokenId from './erc721-with-tokenid';
+import * as erc721WithTokenIdRangeWeights from './erc721-with-tokenid-range-weights';
 import * as erc721WithTokenIdWeighted from './erc721-with-tokenid-weighted';
 import * as hoprUniLpFarm from './hopr-uni-lp-farm';
 import * as erc721 from './erc721';
@@ -163,12 +165,14 @@ import * as eglVote from './egl-vote';
 import * as mcnFarm from './mcn-farm';
 import * as snowswap from './snowswap';
 import * as meebitsdao from './meebitsdao';
+import * as membership from './membership';
 import * as holdsTokens from './holds-tokens';
 import * as crucibleERC20BalanceOf from './crucible-erc20-balance-of';
 import * as hasrock from './has-rock';
 import * as flexaCapacityStaking from './flexa-capacity-staking';
 import * as sunriseGamingUniv2Lp from './sunrisegaming-univ2-lp';
 import * as sunriseGamingStaking from './sunrisegaming-staking';
+import * as sUmamiHolders from './sumami-holders';
 import * as singleStakingPoolsBalanceOf from './single-staking-pools-balanceof';
 import * as occStakeOf from './occ-stake-of';
 import * as hoprStaking from './hopr-staking';
@@ -225,6 +229,8 @@ import * as squidDao from './squid-dao';
 import * as pathBalanceStakedAndLocked from './path-balance-staked-and-locked';
 import * as bottoDao from './botto-dao';
 import * as genart from './genart';
+import * as zorro from './zorro';
+import * as voltVotingPower from './volt-voting-power';
 
 const strategies = {
   'nouns-rfp-power': nounsPower,
@@ -254,6 +260,7 @@ const strategies = {
   'erc20-balance-of-delegation': erc20BalanceOfDelegation,
   'erc20-balance-of-quadratic-delegation': erc20BalanceOfQuadraticDelegation,
   'erc20-balance-of-weighted': erc20BalanceOfWeighted,
+  'erc20-balance-of-indexed': erc20BalanceOfIndexed,
   'erc20-price': erc20Price,
   'balance-of-with-min': balanceOfWithMin,
   'balance-of-with-thresholds': balanceOfWithThresholds,
@@ -265,6 +272,7 @@ const strategies = {
   'erc721-enumerable': erc721Enumerable,
   'erc721-with-multiplier': erc721WithMultiplier,
   'erc721-with-tokenid': erc721WithTokenId,
+  'erc721-with-tokenid-range-weights': erc721WithTokenIdRangeWeights,
   'erc721-with-tokenid-weighted': erc721WithTokenIdWeighted,
   'erc721-multi-registry': erc721MultiRegistry,
   'erc1155-balance-of': erc1155BalanceOf,
@@ -443,6 +451,7 @@ const strategies = {
   'jade-smrt': jadeSmrt,
   'ocean-dao-brightid': oceanDAOBrightID,
   'saddle-finance': saddleFinance,
+  membership: membership,
   'lydia-gov-vault': lydiaGovVault,
   'xkawa-farm': xkawaFarm,
   'darkforest-score': darkforestScore,
@@ -450,7 +459,10 @@ const strategies = {
   'squid-dao': squidDao,
   'botto-dao': bottoDao,
   genart,
-  'path-balance-staked-and-locked': pathBalanceStakedAndLocked
+  'path-balance-staked-and-locked': pathBalanceStakedAndLocked,
+  'sumami-holders': sUmamiHolders,
+  zorro,
+  'volt-voting-power': voltVotingPower
 };
 
 Object.keys(strategies).forEach(function (strategyName) {

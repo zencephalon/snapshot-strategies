@@ -2,11 +2,15 @@
   {
     "name": "Example query",
     "strategy": {
-      "name": "erc721-with-tokenid-weighted",
+      "name": "erc721-with-tokenid-range-weights",
       "params": {
         "address": "0x30cDAc3871c41a63767247C8D1a2dE59f5714e78",
         "symbol": "Reaper(s)",
-        "tokenIds": ["2112", "2871", "3221", "3587"]
+        "defaultWeight": 1,
+        "tokenIdWeightRanges": [
+          { "start": 0, "end": 3000, "weight": 1 },
+          { "start": 3001, "end": 4715, "weight": 2 }
+        ]
       }
     },
     "network": "1",
